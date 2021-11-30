@@ -1,1 +1,1 @@
-web: gunicorn News_Api.wsgi:application --log-file - --log-level debug
+web: gunicorn News_Api.wsgi:apication --log-file - --log-level debug
