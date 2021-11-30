@@ -91,29 +91,7 @@ DATABASES = {
     'default': env.dj_db_url('DATABASE_URL')
 }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 
-# DATABASES = {
-#     'default': {
-#
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#
-#         'NAME': 'template1',
-#
-#         'USER': 'postgres',
-#
-#         'PASSWORD': '2183707',
-#
-#         'HOST': 'localhost',
-#
-#         #'PORT': '8000',
-#     }
-# }
 
 
 # Password validation
