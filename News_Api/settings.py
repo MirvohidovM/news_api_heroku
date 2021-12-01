@@ -11,13 +11,13 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
-from environs import Env
 import dj_database_url
 
-env = Env()
-env.read_env()
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+from django.conf.global_settings import DATABASES
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -25,11 +25,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env.str('SECRET_KEY')
+SECRET_KEY = 'django-insecure-qtozg$^ip5neijsg(hw)jq^9xfue5hk0ejgaf4bamhnj^yn9z8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env.bool("DEBUG", default=False)
-ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1']
+DEBUG = False
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'nameofapp.herokuapp.com']
+
 
 
 
@@ -89,6 +90,7 @@ WSGI_APPLICATION = 'News_Api.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 db_from_env = dj_database_url.config(conn_max_age=600)
+
 DATABASES['default'].update(db_from_env)
 
 # DATABASES = {
