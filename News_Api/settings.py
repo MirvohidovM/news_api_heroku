@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 from environs import Env
+import dj_database_url
 
 env = Env()
 env.read_env()
@@ -87,9 +88,12 @@ WSGI_APPLICATION = 'News_Api.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': env.dj_db_url('DATABASE_URL')
-}
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
+
+# DATABASES = {
+#     'default': env.dj_db_url('DATABASE_URL')
+# }
 
 # DATABASES = {
 #     'default': {
