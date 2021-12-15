@@ -67,6 +67,7 @@ class NewsDetailView(views.APIView):
         serializer = NewsSerializer(new)
         return Response(serializer.data)
 
+    @swagger_auto_schema(request_body=NewsSerializer)
     def put(self, request, pk):
         new = get_object_or_404(News, pk=pk)
         serializer = NewsSerializer(new, data=request.data)
@@ -109,6 +110,7 @@ class CategoryDetail(views.APIView):
         serializer = CatSerializer(category)
         return Response(serializer.data)
 
+    @swagger_auto_schema(request_body=CatSerializer)
     def put(self, request, pk):
         category = get_object_or_404(Category, pk=pk)
         serializer = CatSerializer(category, data=request.data)
