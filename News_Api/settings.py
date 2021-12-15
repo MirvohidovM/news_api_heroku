@@ -36,9 +36,6 @@ SECRET_KEY = env.str('SECRET_KEY')
 DEBUG = env.bool('DEBUG', default=False)
 ALLOWED_HOSTS = ['*']
 
-
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -157,7 +154,7 @@ USE_L10N = True
 USE_TZ = True
 
 STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
-STATIC_URL = str(BASE_DIR.joinpath('staticfiles'))
+STATIC_URL = str(BASE_DIR.joinpath('staticfiles/'))
 STATIC_ROOT = str(BASE_DIR / 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
